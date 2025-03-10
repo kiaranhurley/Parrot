@@ -1,3 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=Tahoma&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-jungle-accent/10 bg-jungle-pattern font-jungle;
+    background-size: 100px 100px;
+  }
+}
+
+@layer components {
+  .jungle-title {
+    @apply text-jungle-primary font-bold relative;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+  }
+  
+  .jungle-title::before, .jungle-title::after {
+    content: "";
+    @apply absolute w-6 h-6 bg-contain bg-no-repeat opacity-70;
+  }
+  
+  .jungle-title::before {
+    background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZmlsbD0iIzRFOUYzRCIgZD0iTTEyLDIyQTEwLDEwIDAgMCwxIDIsMTJBMTAsMTAgMCAwLDEgMTIsMkExMCwxMCAwIDAsMSAyMiwxMkExMCwxMCAwIDAsMSAxMiwyMk0xMiwyMEE4LDggMCAwLDAgMjAsMTJBOCw4IDAgMCwwIDEyLDRBOCw4IDAgMCwwIDQsMTJBOCw4IDAgMCwwIDEyLDIwTTEyLDEyTDEyLDkuNUMxMiw4LjEgMTMuMSw3IDE0LjUsN0MxNS45LDcgMTcsOC4xIDE3LDkuNUMxNywxMC45IDE1LjksMTIgMTQuNSwxMkgxMk0xMiwxMkgxMi4wMUMxMi4wMSwxMy45IDEwLjksMTUuMSA5LDE1LjFDNy4xMSwxNS4xIDYsMTMuOSA2LDEyQzYsMTAuMSA3LjExLDkgOSw5QzEwLjg5LDkgMTIsMTAuMSAxMiwxMloiIC8+PC9zdmc+');
+    left: -30px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  
+  .jungle-title::after {
+    background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZmlsbD0iIzRFOUYzRCIgZD0iTTEyLDIyQTEwLDEwIDAgMCwxIDIsMTJBMTAsMTAgMCAwLDEgMTIsMkExMCwxMCAwIDAsMSAyMiwxMkExMCwxMCAwIDAsMSAxMiwyMk0xMiwyMEE4LDggMCAwLDAgMjAsMTJBOCw4IDAgMCwwIDEyLDRBOCw4IDAgMCwwIDQsMTJBOCw4IDAgMCwwIDEyLDIwTTEyLDEyTDEyLDkuNUMxMiw4LjEgMTMuMSw3IDE0LjUsN0MxNS45LDcgMTcsOC4xIDE3LDkuNUMxNywxMC45IDE1LjksMTIgMTQuNSwxMkgxMk0xMiwxMkgxMi4wMUMxMi4wMSwxMy45IDEwLjksMTUuMSA5LDE1LjFDNy4xMSwxNS4xIDYsMTMuOSA2LDEyQzYsMTAuMSA3LjExLDkgOSw5QzEwLjg5LDkgMTIsMTAuMSAxMiwxMloiIC8+PC9zdmc+');
+    right: -30px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  
+  .jungle-card {
+    @apply bg-white/90 backdrop-blur-sm border-l-4 border-jungle-secondary rounded-lg shadow-jungle transition-all duration-300;
+  }
+  
+  .jungle-card:hover {
+    @apply shadow-lg border-l-4 border-jungle-primary;
+  }
+  
+  .jungle-button {
+    @apply rounded-lg transition-all duration-300 font-medium shadow-sm;
+  }
+  
+  .jungle-button-primary {
+    @apply jungle-button bg-jungle-primary hover:bg-jungle-primary/90 text-white;
+  }
+  
+  .jungle-button-secondary {
+    @apply jungle-button bg-jungle-secondary hover:bg-jungle-secondary/90 text-white;
+  }
+  
+  .jungle-button-accent {
+    @apply jungle-button bg-jungle-accent hover:bg-jungle-accent/90 text-jungle-dark;
+  }
+  
+  .jungle-button-danger {
+    @apply jungle-button bg-jungle-danger hover:bg-jungle-danger/90 text-white;
+  }
+  
+  .jungle-input {
+    @apply border-2 border-jungle-light/50 focus:border-jungle-secondary focus:ring-1 focus:ring-jungle-secondary rounded-lg;
+  }
+  
+  .jungle-slider {
+    @apply appearance-none w-full h-2 bg-jungle-light/30 rounded-full;
+  }
+  
+  .jungle-slider::-webkit-slider-thumb {
+    @apply appearance-none w-4 h-4 rounded-full bg-jungle-secondary cursor-pointer;
+  }
+  
+  .jungle-slider::-moz-range-thumb {
+    @apply w-4 h-4 rounded-full bg-jungle-secondary cursor-pointer border-0;
+  }
+}
